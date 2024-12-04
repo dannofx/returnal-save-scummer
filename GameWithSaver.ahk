@@ -134,8 +134,8 @@ CleanOldBackups() {
     Loop, Files, %backupFolder%\*, D
         FileNames.Push(A_LoopFileFullPath)
     FileNames.Sort()
-    If FileNames.Length() > 100 {
-        Loop, % FileNames.Length() - 100
+    If FileNames.Length() > 300 {
+        Loop, % FileNames.Length() - 300
             FileRemoveDir, % FileNames[A_Index], 1
         Log("Cleaned old backups. Remaining backups: " FileNames.Length())
     }
